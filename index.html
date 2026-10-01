@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HYW</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    background: #111111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+    overflow: hidden;
+  }
+  .q7Z2p {
+    font-size: 52px;
+    letter-spacing: 0.35em;
+    color: #ffffff;
+    text-shadow: 0 0 24px rgba(0, 0, 0, 0.85);
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.15s ease;
+    z-index: 10;
+  }
+  .q7Z2p:active { transform: scale(0.94); }
+</style>
+</head>
+<body>
+  <div class="q7Z2p" id="xK9mR">HYW</div>
+<script>
+  var vB3nQ = [
+    'HYW'
+  ];
+
+  var wE5rT = document.getElementById('xK9mR');
+
+  function zA8cD(pL1mN) {
+    var rS4tU = document.createElement('textarea');
+    rS4tU.value = pL1mN;
+    rS4tU.setAttribute('readonly', '');
+    rS4tU.style.cssText = 'position:fixed;top:-9999px;left:-9999px;opacity:0;';
+    document.body.appendChild(rS4tU);
+    rS4tU.select();
+    rS4tU.setSelectionRange(0, rS4tU.value.length);
+    try { document.execCommand('copy'); } catch (hJ6kO) {}
+    document.body.removeChild(rS4tU);
+  }
+
+  function fG2hI(pL1mN) {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(pL1mN).catch(function () {
+        zA8cD(pL1mN);
+      });
+    } else {
+      zA8cD(pL1mN);
+    }
+  }
+
+  wE5rT.addEventListener('click', function () {
+    var dC3vW = Math.floor(Math.random() * vB3nQ.length);
+    fG2hI(vB3nQ[dC3vW]);
+  });
+</script>
+</body>
+</html>
