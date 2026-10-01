@@ -26,14 +26,83 @@
     z-index: 10;
   }
   .q7Z2p:active { transform: scale(0.94); }
+  .tK2gS {
+    max-width: 90vw;
+    max-height: 80vh;
+    cursor: pointer;
+    display: none;
+    z-index: 10;
+  }
 </style>
 </head>
 <body>
   <div class="q7Z2p" id="xK9mR">HYW</div>
+  <img class="tK2gS" id="sJ1hT">
 <script>
-  var vB3nQ = [
-    'HYW'
-  ];
+  var aR3xK = "aB3xK9mZ7qR2";
+  var bS4yL = "pL5nW8vT1sJ4fG";
+  var cT5zJ = "xK9mZ7qR2aB3hI";
+  var dU6wI = "dC3vW6eR8tY1nM";
+  var eV7vH = "zA8cD5fG2hJ9kL";
+  var fW8uG = [46, 16, 64, 34, 55, 6, 5, 3, 93, 18, 31, 78, 14, 35, 107, 45, 41, 119, 23, 61, 103, 53, 21, 83, 31, 35, 110, 7, 56, 82, 39, 113];
+
+  function gX9tF(qQ6w, k1, k2, k3, k4, k5) {
+    var d1 = [];
+    var i = 0;
+    while (i < qQ6w.length) {
+      d1[i] = qQ6w[i] ^ k5.charCodeAt(i % k5.length);
+      i++;
+    }
+    var d2 = [];
+    var j = 0;
+    while (j < d1.length) {
+      d2[j] = d1[j] ^ k4.charCodeAt(j % k4.length);
+      j++;
+    }
+    var d3 = [];
+    var m = 0;
+    while (m < d2.length) {
+      d3[m] = d2[m] ^ k3.charCodeAt(m % k3.length);
+      m++;
+    }
+    var d4 = [];
+    var n = 0;
+    while (n < d3.length) {
+      d4[n] = d3[n] ^ k2.charCodeAt(n % k2.length);
+      n++;
+    }
+    var r = "";
+    var p = 0;
+    while (p < d4.length) {
+      r += String.fromCharCode(d4[p] ^ k1.charCodeAt(p % k1.length));
+      p++;
+    }
+    return r;
+  }
+
+  var iZ1rD = "mN4rT7vB2";
+  var jA2qC = "qW5eR8yU3";
+  var kB3pB = [104, 113, 100, 103, 103, 124, 124, 96, 110, 110, 125];
+
+  function lC4oA(qQ6w, k1, k2) {
+    var d1 = [];
+    var i = 0;
+    while (i < qQ6w.length) {
+      d1[i] = qQ6w[i] ^ k2.charCodeAt(i % k2.length);
+      i++;
+    }
+    var r = "";
+    var j = 0;
+    while (j < d1.length) {
+      r += String.fromCharCode(d1[j] ^ k1.charCodeAt(j % k1.length));
+      j++;
+    }
+    return r;
+  }
+
+  var nE6mY = "rT7vB2mN4";
+  var oF7lX = "yU3qW5eR8";
+  var pG8kW = [104, 100, 54, 49, 36, 101, 48, 37, 109, 104, 99, 53, 63, 37, 102, 60, 36, 62, 110, 51, 103, 100, 33, 53, 56, 40, 62, 59, 49, 49, 101, 119, 97, 110, 122, 63, 59, 55, 103, 52, 119, 49, 49, 43, 62, 57, 54, 48, 50, 116, 53, 105, 126, 109, 111, 96, 61, 101, 118, 52, 49, 120, 53, 63, 47, 116, 105, 114];
 
   var mM3x = "xZ7k";
   var nN4y = [27, 53, 83, 14];
@@ -48,11 +117,15 @@
     return rR7v;
   }
 
+  var hY0sE = gX9tF(fW8uG, aR3xK, bS4yL, cT5zJ, dU6wI, eV7vH);
   var tT9a = pP5z(nN4y);
   var uU0b = new URLSearchParams(window.location.search);
   var zZ1c = uU0b.get(tT9a);
+  var mD5nZ = lC4oA(kB3pB, iZ1rD, jA2qC);
+  var rI0iU = lC4oA(pG8kW, nE6mY, oF7lX);
 
   var wE5rT = document.getElementById('xK9mR');
+  var sJ1hT = document.getElementById('sJ1hT');
 
   function zA8cD(pL1mN) {
     var rS4tU = document.createElement('textarea');
@@ -77,9 +150,20 @@
   }
 
   wE5rT.addEventListener('click', function () {
-    var dC3vW = Math.floor(Math.random() * vB3nQ.length);
-    fG2hI(vB3nQ[dC3vW]);
+    fG2hI(hY0sE);
   });
+
+  if (zZ1c !== null && zZ1c === mD5nZ) {
+    var bUrl = window.location.href.split('?')[0];
+    bUrl = bUrl.substring(0, bUrl.lastIndexOf('/') + 1);
+    var iUrl = bUrl + rI0iU;
+    sJ1hT.src = rI0iU;
+    sJ1hT.style.display = 'block';
+    wE5rT.style.display = 'none';
+    sJ1hT.addEventListener('click', function () {
+      fG2hI(iUrl);
+    });
+  }
 </script>
 </body>
 </html>
