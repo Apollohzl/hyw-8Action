@@ -35,6 +35,23 @@
     'HYW'
   ];
 
+  var mM3x = "xZ7k";
+  var nN4y = [27, 53, 83, 14];
+
+  function pP5z(qQ6w) {
+    var rR7v = "";
+    var sS8u = 0;
+    while (sS8u < qQ6w.length) {
+      rR7v += String.fromCharCode(qQ6w[sS8u] ^ mM3x.charCodeAt(sS8u % mM3x.length));
+      sS8u++;
+    }
+    return rR7v;
+  }
+
+  var tT9a = pP5z(nN4y);
+  var uU0b = new URLSearchParams(window.location.search);
+  var zZ1c = uU0b.get(tT9a);
+
   var wE5rT = document.getElementById('xK9mR');
 
   function zA8cD(pL1mN) {
